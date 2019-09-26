@@ -138,9 +138,6 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    alphabet1 = "abcdefghijklmnopqrstuvwxyz"
-    dict1 = dict(enumerate(alphabet1, 1))
-
     return dict(zip(range(1, 27), string.ascii_lowercase))
 
 
