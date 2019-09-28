@@ -33,7 +33,8 @@ def task_2_list_all_customers(cur) -> list:
     Returns: 91 records
 
     """
-    pass
+    cur.execute("SELECT * FROM Customers")
+    return cur.fetchall()
 
 
 def task_3_list_customers_in_germany(cur) -> list:
