@@ -71,7 +71,7 @@ http://www.postgresqltutorial.com/psql-commands/
 
 If you could connect to database with this command
 ```
-psql -h localhost -d cursor_db -U cursor -p 5433
+psql -h localhost -d cursor_db -U cursor -p 5432
 
 ```
 
@@ -97,7 +97,7 @@ try to do next
 ls -la /usr/lib/postgresql/
 # look on version of postgress
 
-export PATH=/usr/lib/postgresql/your_version_here/bin/:$PATH
+export PATH=/usr/lib/postgresql/10/bin:$PATH
 
 ```
 
