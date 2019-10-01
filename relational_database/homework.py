@@ -104,6 +104,31 @@ def task_8_count_customers_by_city(cur):
         ORDER BY City DESC
         """
     )
+
+    #cur.fetchall()
+    #print(x)
+
+    #result1 = []
+    #for row in cur.fetchall():
+        #result1.append(dict(zip(columns, row)))
+    #print(result1)
+
+    #file = open("test.txt", "w")
+
+    #file.write("aaaa")
+
+    #for row in x:
+    #for row in x:
+    #    file.write("bbb")
+    #    file.write(row) # + '\n')
+    #    p1 = row[0]
+    #    p2 = row[1]
+    #    file.write(p1 + '\n')
+    #    file.write(p2 + '\n')
+
+    #file.close()
+
+
     return cur.fetchall()
 
 
@@ -246,3 +271,6 @@ def task_16_match_all_customers_and_suppliers_by_country(cur):
         ORDER BY c.Country, s.Country"""
     )
     return cur.fetchall()
+
+
+#v3
