@@ -17,7 +17,17 @@ def task_1_add_new_record_to_db(con) -> None:
     Returns: 92 records
     """
     with con.cursor() as cursor:
-        cursor.execute("INSERT INTO Customers VALUES(92, 'Thomas', 'David', 'Some Address', 'London', '774', 'Singapore')")
+        cursor.execute("""INSERT INTO Customers 
+                        VALUES(
+                            92, 
+                            'Thomas', 
+                            'David', 
+                            'Some Address', 
+                            'London', 
+                            '774', 
+                            'Singapore'
+                        )"""
+        )
 
 
 def task_2_list_all_customers(cur) -> list:
@@ -50,7 +60,10 @@ def task_4_update_customer(con):
     Returns: 91 records with updated customer
     """
     with con.cursor() as cursor:
-        cursor.execute("UPDATE Customers SET CustomerName = 'Johnny Depp' WHERE CustomerID = 1")
+        cursor.execute(
+            """UPDATE Customers SET CustomerName = 'Johnny Depp' 
+            WHERE CustomerID = 1"""
+        )
 
 
 def task_5_delete_the_last_customer(con) -> None:
@@ -99,36 +112,12 @@ def task_8_count_customers_by_city(cur):
     """
     cur.execute(
         """SELECT
-        COUNT(customername), city
+            COUNT(customername), 
+            city
         FROM customers
         GROUP BY city
         ORDER BY COUNT(customername) DESC, city;"""
     )
-
-    #cur.fetchall()
-    #print(x)
-
-    #result1 = []
-    #for row in cur.fetchall():
-        #result1.append(dict(zip(columns, row)))
-    #print(result1)
-
-    #file = open("test.txt", "w")
-
-    #file.write("aaaa")
-
-    #for row in x:
-    #for row in x:
-    #    file.write("bbb")
-    #    file.write(row) # + '\n')
-    #    p1 = row[0]
-    #    p2 = row[1]
-    #    file.write(p1 + '\n')
-    #    file.write(p2 + '\n')
-
-    #file.close()
-
-
     return cur.fetchall()
 
 
@@ -140,11 +129,12 @@ def task_9_count_customers_by_country_with_than_10_customers(cur):
     Returns: 3 records
     """
     cur.execute(
-        """SELECT Country, COUNT(*) AS Count 
+        """SELECT 
+            Country, 
+            COUNT(*) AS Count 
         FROM Customers
         GROUP BY Country
-        HAVING COUNT(*) > 10
-        """
+        HAVING COUNT(*) > 10"""
     )
     return cur.fetchall()
 
@@ -184,7 +174,11 @@ def task_12_list_suppliers_from_specified_countries(cur):
             City,
             Country 
         FROM Suppliers
-        WHERE Country IN ('USA', 'UK', 'Japan')"""
+        WHERE Country IN (
+            'USA', 
+            'UK', 
+            'Japan'
+        )"""
     )
     return cur.fetchall()
 
@@ -224,8 +218,7 @@ def task_14_list_products_with_supplier_information(cur):
             s.SupplierName
         FROM Products AS p
         JOIN Suppliers AS s
-        ON p.SupplierID = s.SupplierID
-        """
+        ON p.SupplierID = s.SupplierID"""
     )
     return cur.fetchall()
 
@@ -271,6 +264,3 @@ def task_16_match_all_customers_and_suppliers_by_country(cur):
         ORDER BY c.Country, s.Country"""
     )
     return cur.fetchall()
-
-
-#v3

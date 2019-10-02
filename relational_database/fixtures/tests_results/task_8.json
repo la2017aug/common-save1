@@ -1,5 +1,8 @@
 [
-  {"count": 3, "city": "Madrid"},
+  {
+    "count": 3,
+    "city": "Madrid"
+  },
   {
     "count": 1,
     "city": "Graz"
