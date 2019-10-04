@@ -1,4 +1,4 @@
-from typing import List
+#from typing import List
 
 
 def task_1_add_new_record_to_db(con) -> None:
@@ -123,7 +123,7 @@ def task_8_count_customers_by_city(cur):
             city
         FROM customers
         GROUP BY city
-        ORDER BY COUNT(customername) DESC, city;
+        ORDER BY city DESC
         """
     )
     return cur.fetchall()
