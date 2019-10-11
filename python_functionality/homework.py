@@ -19,7 +19,6 @@ def task_1_fix_names_start_letter(data: DT) -> DT:
     return data
 
 
-
 def task_2_remove_dict_fields(data: DT, redundant_keys: List[str]) -> DT:
     """given_data
     Remove from dictionaries given key value
