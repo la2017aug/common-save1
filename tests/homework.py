@@ -72,4 +72,3 @@ class Rectangle:
         diagonal = self.get_rectangle_diagonal()
         radius = diagonal / 2 * math.sqrt(2)
         return radius
-
