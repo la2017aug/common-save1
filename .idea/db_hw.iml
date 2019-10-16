@@ -2,6 +2,11 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/git" />
+      <excludeFolder url="file://$MODULE_DIR$/oop" />
+      <excludeFolder url="file://$MODULE_DIR$/python_functionality" />
+      <excludeFolder url="file://$MODULE_DIR$/relational_database" />
+      <excludeFolder url="file://$MODULE_DIR$/theoretical_questions" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.7 (venv)" jdkType="Python SDK" />

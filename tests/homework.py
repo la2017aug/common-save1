@@ -40,6 +40,7 @@ class Rectangle:
 
         return sum_of_corners
 
+
     def get_rectangle_diagonal(self):
         """
         Get the rectangle diagonal due to rhe Pifagor formula c^2 = a^2 + b^2
