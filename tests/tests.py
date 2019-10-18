@@ -26,9 +26,9 @@ class RectangleTestCase(unittest.TestCase):
             self.assertEqual(self.rectangle3.get_sum_of_corners(i), i * 90)
 
     def test_sum_of_corners_error(self):
-        self.assertRaises(ValueError, self.rectangle1.get_sum_of_corners ,5)
-        self.assertRaises(ValueError, self.rectangle2.get_sum_of_corners ,5)
-        self.assertRaises(ValueError, self.rectangle3.get_sum_of_corners ,5)
+        self.assertRaises(ValueError, self.rectangle1.get_sum_of_corners, 5)
+        self.assertRaises(ValueError, self.rectangle2.get_sum_of_corners, 5)
+        self.assertRaises(ValueError, self.rectangle3.get_sum_of_corners, 5)
 
     def test_get_rectangle_diagonal(self):
         self.assertEqual(self.rectangle1.get_rectangle_diagonal(),
