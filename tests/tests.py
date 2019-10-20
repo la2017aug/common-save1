@@ -25,10 +25,11 @@ class RectangleTestCase(unittest.TestCase):
             self.assertEqual(self.rectangle2.get_sum_of_corners(i), i * 90)
             self.assertEqual(self.rectangle3.get_sum_of_corners(i), i * 90)
 
-    def test_sum_of_corners_error(self):
-        self.assertRaises(ValueError, self.rectangle1.get_sum_of_corners, 5)
-        self.assertRaises(ValueError, self.rectangle2.get_sum_of_corners, 5)
-        self.assertRaises(ValueError, self.rectangle3.get_sum_of_corners, 5)
+    def test_get_sum_of_corners_error(self):
+        with self.assertRaises(ValueError):
+            self.rectangle1.get_sum_of_corners(5)
+            self.rectangle2.get_sum_of_corners(5)
+            self.rectangle3.get_sum_of_corners(5)
 
     def test_get_rectangle_diagonal(self):
         self.assertEqual(self.rectangle1.get_rectangle_diagonal(),
@@ -52,11 +53,10 @@ class RectangleTestCase(unittest.TestCase):
     def test_get_radius_of_inscribed_circle(self):
         self.assertEqual(
             self.rectangle1.get_radius_of_inscribed_circle(),
-            math.sqrt(8) / 2 * math.sqrt(2))
-        self.assertRaises(ValueError,
-                          self.rectangle2.get_radius_of_inscribed_circle)
-        self.assertRaises(ValueError,
-                          self.rectangle3.get_radius_of_inscribed_circle)
+            math.sqrt(8) / (2 * math.sqrt(2)))
+        with self.assertRaises(ValueError):
+            self.rectangle2.get_radius_of_inscribed_circle()
+            self.rectangle3.get_radius_of_inscribed_circle()
 
 
 if __name__ == '__main__':
