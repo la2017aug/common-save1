@@ -38,6 +38,13 @@ class Cat:
     
     """
 
+    products = {
+        'fodder': 10,
+        'apple': 5,
+        'milk': 2,
+        'another_food': 0
+    }
+
     def __init__(self, age):
         self.age = age
         self.average_speed = self._set_average_speed()
@@ -71,12 +78,7 @@ class Cat:
             self.saturation_level = 100
 
     def eat(self, product):
-        if product == 'fodder':
-            self._increase_saturation_level(10)
-        elif product == 'apple':
-            self._increase_saturation_level(5)
-        elif product == 'milk':
-            self._increase_saturation_level(2)
+        self._increase_saturation_level(self.products.get(product))
 
     def run(self, hours):
         distance = self.average_speed * hours
@@ -108,6 +110,12 @@ class Cheetah(Cat):
       
     """
 
+    products = {
+        'gazelle': 30,
+        'rabbit': 15,
+        'another_food': 0
+    }
+
     def __init__(self, age):
         super().__init__(age)
 
@@ -123,10 +131,7 @@ class Cheetah(Cat):
         super()._increase_saturation_level(value)
 
     def eat(self, product):
-        if product == 'gazelle':
-            self._increase_saturation_level(30)
-        elif product == 'rabbit':
-            self._increase_saturation_level(15)
+        self._increase_saturation_level(self.products.get(product))
 
 
 class Wall:
@@ -152,12 +157,10 @@ class Wall:
         return self.width * self.height
 
     def number_of_rolls_of_wallpaper(self, roll_width_m, roll_length_m):
-        try:
+        if roll_width_m > 0 and roll_length_m > 0:
             return self.wall_square() / (roll_width_m * roll_length_m)
-        except ValueError:
-            print('Should be an integer value')
-        except ZeroDivisionError:
-            print('Width and height must be greater than 0')
+        else:
+            raise ValueError('Width and length of roll must be not 0 ')
 
 
 class Roof:
