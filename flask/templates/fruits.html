@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block home %}
 
-</body>
-</html>
+<h1>Fruits list:</h1>
+<ul>
+    {% for fruit in fruits %}
+    {% if fruit == "strawberry" %}
+        <li style="color:red;">{{fruit}}</li>
+    {% else %}
+        <li>{{fruit}}</li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}
