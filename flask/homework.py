@@ -10,7 +10,7 @@ def home():
 
 @app.route('/vegetables')
 def vegetables():
-    vegetables_list = ['beans', 'carrot', 'beetroot', 'cucumber']
+    vegetables_list = ['beans', 'carrot', 'beetroot', 'cucumber'] #if you never gonna change this list in your code, use tuple
     return render_template('vegetables.html', vegetables=vegetables_list)
 
 
