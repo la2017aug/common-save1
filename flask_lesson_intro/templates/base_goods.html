@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block main %}
+    <h1>{{ title }}</h1>
+    <div id="image">
+        {% set img_url = img_url %}
+        <img src="{{url_for('static', filename=img_url)}}" alt="{{ title }}">
+    </div>
+    <div class="text">
+        {% set title = title %}
+        {% for item in data %}
+            {% if item['title'] == title %}
+                <p>{{ item['text'] }}</p>
+                <!--<p>Length of text: <strong>{{ item['text'] | length}}</strong></p>-->
+                <p>Length of text: {{ item['text'] | length}}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

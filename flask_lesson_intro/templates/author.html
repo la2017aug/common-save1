@@ -1,15 +1,8 @@
-{% extends "home.html" %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% block main_info %}
-<h2>Oleksandr Lavrynenko<br/>
-    If you have some questions, please white me on GitHub. Enjoy!
-</h2>
-<a href="https://github.com/la2017aug/common"> Link for my GitHub account</a>
+{% extends "base.html" %}
+
+{% block main %}
+    <div class="info">
+        <p>Oleksandr Lavrynenko</p>
+        <p>Link for my GitHub account: <a href="https://github.com/la2017aug/common" target="_blank">https://github.com/la2017aug/common</a></p>
+    </div>
 {% endblock %}
-</body>
-</html>
