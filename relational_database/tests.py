@@ -149,7 +149,6 @@ class TestSQLQueries(unittest.TestCase):
         for i, row in enumerate(actual_result):
             self.assertDictEqual(row, expected_result[i])
 
-
     def test_task_7(self):
         with self.conn.cursor(cursor_factory=RealDictCursor) as cursor:
             actual_result = task_7_list_supplier_countries_in_desc_order(cursor)
