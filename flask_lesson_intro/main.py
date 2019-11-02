@@ -18,8 +18,8 @@ def get_item_page(item):
                                    text=i['text'],
                                    image=i['title'] + '.jpg',
                                    count=len(i['text'].split()))
-    else:
-        return render_template("home.html")
+        else:
+            return render_template("home.html")
 
 
 @app.route('/author')
