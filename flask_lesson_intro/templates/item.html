@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<p><h1 align="center">{{title}}</h1></p>
+	<p><h1 align="center">{{title}}</h1>
 	<p class=img align=center style='text-align:center'>
 		<img src="{{url_for('static', filename=image)}}" style="float:none;width:200px;height:200px;">
 	</p>
@@ -9,5 +9,5 @@
 	<div class="col-md-12 mt-md-0 mt-3">
 		<h10>{{text}}</h10>
 	</div>
-	<p><h5 align="center">Count of words: {{count}}</h5></p>
+	<p><h5 align="center">Count of words: {{count}}</h5>
 {% endblock %}
