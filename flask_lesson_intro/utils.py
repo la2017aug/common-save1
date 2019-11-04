@@ -6,4 +6,5 @@ def get_data():
         with open("data.json") as file:
             return json.load(file)
     except(IOError, json.JSONDecodeError):
-        raise
+        pass
+        #raise
