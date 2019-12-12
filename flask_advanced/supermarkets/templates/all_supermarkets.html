@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% from 'macros.html' import disable_clicked %}
 
 
 {% block title %} Supermarkets {% endblock %}
@@ -22,9 +23,9 @@
 
 <table>
   <tr>
-    <th style="width: 70%;">Supermarket name</th>
+    <th style="width: 15%;">Supermarket name</th>
     <th style="width: 15%;">Location</th>
-    <th style="width: 15%;">id</th>
+    <th style="width: 70%;">id</th>
   </tr>
 
     {% if args %}
