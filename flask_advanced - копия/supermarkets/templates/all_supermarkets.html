@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import disable_clicked %}
+
+
+{% block title %} Supermarkets {% endblock %}
+
+{% block content_title %} <a href="{{ url_for('supermarkets.get_all_supermarkets') }}"><u> Supermarkets </u></a> {% endblock %}
+
+{% block content %}
+<form action="{{ url_for('supermarkets.get_all_supermarkets') }}" method="get">
+  Filter by location:
+  <input type="text" name="location">
+  <input type="submit" value="Find">
+</form>
+
+<form action="{{ url_for('supermarkets.get_all_supermarkets') }}" method="get">
+  Filter by id:
+  <input type="text" name="id">
+  <input type="submit" value="Find">
+</form>
+
+<p><a href="{{ url_for('supermarkets.show_add_supermarket_form') }}">Add supermarket</a></p>
+
+<table>
+  <tr>
+    <th style="width: 30%; background: #ffcc00;">Supermarket name</th>
+    <th style="width: 30%; background: #ddcc00;">Location</th>
+    <th style="width: 70%; background: #ffcc00;">id</th>
+  </tr>
+
+    {% if args %}
+        {% if 'location' in args %}
+            {% set arg = 'location' %}
+            {% endif %}
+        {% if 'id' in args %}
+            {% set arg = 'id'%}
+            {% endif %}
+            <p>Filtered by {{ arg }} = {{ args[arg] }}</p>
+        {% for supermarket in supermarkets_all|selectattr(arg, 'eq', args[arg]) %}
+    <tr>
+        <td><a href="{{ url_for('supermarkets.show_supermarket', uu_id=supermarket['id']) }}">{{ supermarket['name'] }}</a></td>
+        <td>{{ supermarket['location'] }}</td>
+        <td>{{ supermarket['id'] }}</td>
+    </tr>
+        {% endfor %}
+    {% else %}
+        <p>Not filtered</p>
+        {# in case we have no argumensts #}
+        {% for supermarket in supermarkets_all %}
+    <tr>
+        <td><a href="{{ url_for('supermarkets.show_supermarket', uu_id=supermarket['id']) }}">{{ supermarket['name'] }}</a></td>
+        <td>{{ supermarket['location'] }}</td>
+        <td>{{ supermarket['id'] }}</td>
+    </tr>
+        {% endfor %}
+    {% endif %}
+
+</table>
+{% endblock %}

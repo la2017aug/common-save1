@@ -1,0 +1,27 @@
+.img_center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border:0;
+  width: 204px;
+  height: 160px;
+}
+
+.text_center {
+  text-align:center;
+}
+
+.description {
+  text-align: justify;
+}
+
+.hrefDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.hrefEnabled {
+}

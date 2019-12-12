@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Supermarket info {% endblock %}
+
+{% block content_title %}
+<u>Supermarket info</u>
+
+{% endblock %}
+
+{% block content %}
+    <h1>{{ supermarket.name }}</h1>
+    <p><b>Location</b>: {{ supermarket.location }}</p>
+    <p><b>ID</b>: {{ supermarket.id }}</p>
+    <p><b>Image</b>: {{ supermarket.img_name }}</p>
+    {% if not supermarket.img_name %}
+    <img class="img_center" alt="No image yet" src="{{ url_for('supermarkets.static', filename='no_image.jpg') }}">
+    {% else %}
+    <img class="img_center" alt="{{ supermarket.img_name }}" src="{{ url_for('supermarkets.static', filename=supermarket.img_name) }}">
+    {% endif %}
+
+    <a href="{{ url_for('supermarkets.get_all_supermarkets') }}"><< back to Supermarkets</a>
+{% endblock %}

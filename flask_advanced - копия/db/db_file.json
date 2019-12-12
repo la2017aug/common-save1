@@ -1,0 +1,39 @@
+{
+  "products": [
+    {
+      "name": "Fort",
+      "price": "200",
+      "description": "Traumatic pistol Fort-10R-03 cal. 9mm (combined)",
+      "img_name": "fort.jpg"
+    },
+    {
+      "name": "Way",
+      "price": "50.5",
+      "description": "Hunting knife Grand Way 2428 VWPR",
+      "img_name": "way.jpg"
+    },
+    {
+      "name": "Kung",
+      "price": "400",
+      "description": "The complete set of the recursive crossbow Man Kung 50A1 / 5PL is such that after assembly it is ready for use. In the kit you get 5 plastic arrows with metal tips.",
+      "img_name": "kung.jpg"
+    }
+  ],
+  "supermarkets": [
+    {
+      "name": "Varus",
+      "location": "Europe",
+      "img_name": "varus.jpg"
+    },
+    {
+      "name": "Mercadona",
+      "location": "Europe",
+      "img_name": "mercadona.jpg"
+    },
+    {
+      "name": "Kaufland",
+      "location": "Germany",
+      "img_name": "kaufland.jpg"
+    }
+  ]
+}

@@ -7,9 +7,10 @@ from models import Product
 
 products = Blueprint('products', __name__,
                      url_prefix='/product',
-                     template_folder='templates',
-                     static_folder='static')
+                     template_folder='../products/templates',
+                     static_folder='../products/static')
 
+#print(products.path)
 
 @products.route('/', methods=['GET'])
 def get_all_products():
