@@ -54,3 +54,5 @@ def show_product(uu_id):
         if uu_id in product.values():
             product_to_show = product
     return render_template('product.html', product=product_to_show)
+
+
