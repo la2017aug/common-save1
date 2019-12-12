@@ -27,13 +27,13 @@ def show_add_product_form():
 @products.route('/', methods=['POST'])
 def add_product():
     data = request.form.to_dict()
-    file = request.files['img_name']
-    if file:
-        filename = secure_filename(file.filename)
+    img_file = request.files['img_name']
+    if img_file:
+        filename = secure_filename(img_file.filename)
         path_to_img = os.path.join('products/static',
                                    secure_filename(filename)
                                    )
-        file.save(path_to_img)
+        img_file.save(path_to_img)
     else:
         filename = None
     DB['products'].append(Product(name=data.get('name'),

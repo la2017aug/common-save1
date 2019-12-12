@@ -27,13 +27,13 @@ def show_add_supermarket_form():
 @supermarkets.route('/', methods=['POST'])
 def add_supermarket():
     data = request.form.to_dict()
-    file = request.files['img_name']
-    if file:
-        filename = secure_filename(file.filename)
+    img_file = request.files['img_name']
+    if img_file:
+        filename = secure_filename(img_file.filename)
         path_to_img = os.path.join('supermarkets/static',
                                    secure_filename(filename)
                                    )
-        file.save(path_to_img)
+        img_file.save(path_to_img)
     else:
         filename = None
     DB['supermarkets'].append(Supermarket(name=data.get('name'),
