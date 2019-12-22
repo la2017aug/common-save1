@@ -6,9 +6,10 @@ DB = {}
 
 def fillup_db():
     DB['rooms'].append(Room(12, 1, 'cleaning', 1200))
-    DB['rooms'].append(Room(8, 2, 'available', 8000))
-    DB['rooms'].append(Room(33, 2, 'available', 3300))
-    DB['rooms'].append(Room(666, 6, 'repairs', 666))
+    DB['rooms'].append(Room(8, 2, 'rented', 8000))
+    DB['rooms'].append(Room(33, 2, 'rented', 3300))
+    DB['rooms'].append(Room(666, 6, 'rented', 666))
+    DB['rooms'].append(Room(721, 6, 'available', 3300))
 
     DB['staff'].append(Staff('Jerry', '123123123XR', 'bellboy', 100))
     DB['staff'].append(Staff('Adam', '234234234XC', 'driver', 6000))
