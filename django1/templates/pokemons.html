@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemons</title>
+</head>
+<body>
+    <a href="{% url 'index' %}">Home</a>
+    <h1>Pokemons</h1>
+    {%  for item in info %}
+        <div>
+            <div>{{ item.type | title }}</div>
+            <ul style="columns: 3;">
+                {% for pokemon in item.pokemons %}
+                    <li><a href="{{ pokemon }}">{{ pokemon }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</body>
+</html>

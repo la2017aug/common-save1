@@ -1,0 +1,14 @@
+services:
+  hw_django:
+    build:
+      context: /root/hw_django
+    healthcheck:
+      interval: 10s
+      retries: 5
+      test:
+      - CMD-SHELL
+      - curl localhost:8000/healthcheck/
+      timeout: 5s
+    ports:
+    - 8000:8000/tcp
+version: '3.0'
