@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pokemon details</title>
-</head>
-<body>
-    <h1>{{ info.name | title }}</h1>
-    <div>Height: {{ info.height }}</div>
-    <div>Weight: {{ info.weight }}</div>
-    <div style="margin-top: 15px;">
-        <div>Abilities</div>
-        <ul style="margin-top: 5px;">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pokemon details</title>
+    </head>
+    <body>
+        <h1>{{ info.name | title }}</h1>
+        <div>Height: {{ info.height }}</div>
+        <div>Weight: {{ info.weight }}</div>
+        <div style="margin-top: 15px;">
+            <div>Abilities</div>
+            <ul style="margin-top: 5px;">
             {% for ability in info.abilities %}
-                <li>
-                    {{ ability.ability.name }}
-                </li>
+                <li>{{ ability.ability.name }}</li>
             {% endfor %}
-        </ul>
-    </div>
-    <a href="{% url 'pokemons' %}">Back to pokemons list</a>
-</body>
+            </ul>
+        </div>
+        <a href="{% url 'pokemons' %}">Back to pokemons list</a>
+    </body>
 </html>

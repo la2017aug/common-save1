@@ -1,1 +1,6 @@
-#
+.git
+.gitignore
+db.sqlite3
+Dockerfile
+docker-compose.yml
+.dockerignore

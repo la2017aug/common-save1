@@ -1,7 +1,7 @@
 services:
   hw_django:
     build:
-      context: /root/hw_django
+      context: ./hw_django
     healthcheck:
       interval: 10s
       retries: 5
